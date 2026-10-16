@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10100f">
+<meta name="description" content="Darmowy, interaktywny Test Mistrza Ligi OPPL. Pokerowe rozdania, decyzje i analizy.">
+<title>Test Mistrza Ligi OPPL</title>
+<style>
+:root{--bg:#0d0f0e;--panel:#171a18;--panel2:#202420;--gold:#e5bf65;--green:#45c486;--muted:#b8c0b9;--white:#f7f7f2;--red:#ff766e;--line:#343b35}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at top,#20271f 0,#0d0f0e 58%);color:var(--white);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.wrap{width:min(920px,100%);margin:auto;padding:16px}
+header{padding:22px 18px 18px;text-align:center;border:1px solid #5c4b25;border-radius:20px;background:linear-gradient(140deg,#1b201b,#101110 70%);box-shadow:0 12px 32px #0005}
+.logo{font-size:13px;letter-spacing:.24em;color:var(--gold);font-weight:800}
+h1{font-size:clamp(28px,7vw,48px);line-height:1.06;margin:10px 0;color:var(--gold);letter-spacing:.02em}
+header p{margin:8px auto 0;max-width:560px;color:#d4d9d3}
+.pills{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:16px}
+.pill{border:1px solid #475047;color:#dfe5dd;border-radius:999px;padding:5px 10px;font-size:12px}
+.card{background:linear-gradient(145deg,#191d1a,#131513);border:1px solid var(--line);border-radius:18px;padding:18px;margin-top:16px;box-shadow:0 8px 24px #0002}
+h2{font-size:21px;margin:0 0 8px;line-height:1.25}
+h3{font-size:16px;margin:0 0 8px}
+.muted{color:var(--muted)}
+.toprow{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.tag{background:#42351b;color:#ffe4a1;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:800;white-space:nowrap}
+.meta{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin:8px 0 16px}
+.cards{display:flex;gap:8px}
+.playing-card{width:54px;height:75px;border-radius:9px;background:#faf9f4;color:#151515;display:flex;flex-direction:column;justify-content:space-between;padding:7px;font-size:20px;font-weight:800;box-shadow:0 3px 7px #0005}
+.red{color:#d92735}
+.board{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.chip{display:inline-flex;align-items:center;justify-content:center;width:39px;height:39px;border-radius:50%;border:4px dashed #f6f0dc;background:#166b47;color:white;font-size:12px;font-weight:900;box-shadow:0 0 0 2px #10452f}
+.info-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:15px 0}
+.info{background:#202520;border-radius:11px;padding:10px 12px}
+.info small{display:block;color:var(--muted);font-size:12px}
+.info strong{font-size:16px}
+.options{display:grid;gap:9px;margin:14px 0}
+.option{display:flex;gap:10px;align-items:flex-start;border:1px solid #424942;border-radius:12px;padding:12px;cursor:pointer;transition:.15s;background:#161916}
+.option:has(input:checked){border-color:var(--gold);background:#292619}
+.option input{margin-top:5px;accent-color:var(--gold);transform:scale(1.15)}
+.option b{display:block}
+.option span span{display:block;color:var(--muted);font-size:13px}
+button{font:inherit;font-weight:800;border:0;border-radius:12px;padding:12px 16px;cursor:pointer}
+.primary{width:100%;background:var(--gold);color:#17150f}
+.secondary{background:#2a302b;color:var(--white);border:1px solid #4b554b}
+button:disabled{opacity:.4;cursor:not-allowed}
+.feedback{margin-top:14px;border-radius:12px;padding:14px;background:#202720;border:1px solid #3d5843}
+.feedback.good{border-color:#2d8b5b}
+.feedback.note{border-color:#7b6332}
+.feedback h3{margin-bottom:7px}
+.progress{height:7px;background:#303730;border-radius:99px;overflow:hidden;margin:12px 0}
+.progress>div{height:100%;background:linear-gradient(90deg,var(--green),var(--gold));width:0;transition:width .25s}
+.actions{display:flex;gap:8px;margin-top:14px}
+.actions button{flex:1}
+.hidden{display:none!important}
+footer{text-align:center;color:#98a199;font-size:12px;padding:22px 8px 10px}
+ul{padding-left:20px}
+li{margin:5px 0}
+hr{border:0;border-top:1px solid var(--line);margin:16px 0}
+@media(min-width:650px){.wrap{padding:28px 20px}.card{padding:24px}.playing-card{width:62px;height:86px}.info-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">♠ O.P.P.L. ♠</div>
+  <h1>TEST MISTRZA LIGI</h1>
+  <p>Sprawdź swoje decyzje pokerowe. Wybierz zagranie, poznaj analizę i ucz się rozdanie po rozdaniu.</p>
+  <div class="pills"><span class="pill">Darmowy test</span><span class="pill">Działa na telefonie</span><span class="pill">Bez logowania</span></div>
+</header>
+
+<section class="card" id="intro">
+  <h2>Witaj przy stole!</h2>
+  <p class="muted">Test zawiera 5 przykładowych rozdań o rosnącym poziomie trudności. Wybierz odpowiedź, a potem przeczytaj analizę. Wynik liczy się lokalnie w tej sesji — strona nie wysyła ani nie zapisuje Twoich danych na serwerze.</p>
+  <div class="info-grid">
+    <div class="info"><small>Rozdania</small><strong>5 pytań</strong></div>
+    <div class="info"><small>Poziomy</small><strong>1–4</strong></div>
+    <div class="info"><small>Wynik</small><strong>Do 5 punktów</strong></div>
+    <div class="info"><small>Tryb</small><strong>Nauka</strong></div>
+  </div>
+  <button class="primary" id="startBtn">Rozpocznij test</button>
+</section>
+
+<section class="card hidden" id="quiz">
+  <div class="toprow"><div><div class="muted" id="qcount">Rozdanie 1 z 5</div><h2 id="qtitle"></h2></div><span class="tag" id="level"></span></div>
+  <div class="progress"><div id="progressFill"></div></div>
+  <div class="meta" id="meta"></div>
+  <div id="scenario"></div>
+  <div class="info-grid" id="facts"></div>
+  <div id="hand" class="hidden">
+    <h3>Twoje karty</h3><div class="cards" id="holeCards"></div>
+  </div>
+  <hr>
+  <h3>Co robisz?</h3>
+  <div class="options" id="options"></div>
+  <button class="primary" id="checkBtn" disabled>Sprawdź odpowiedź</button>
+  <div class="feedback hidden" id="feedback" aria-live="polite"></div>
+  <div class="actions hidden" id="navActions"><button class="secondary" id="restartBtn">Od początku</button><button class="primary" id="nextBtn">Następne rozdanie →</button></div>
+</section>
+
+<section class="card hidden" id="results">
+  <div class="logo">♠ PODSUMOWANIE ♠</div>
+  <h2 id="resultTitle">Twój wynik</h2>
+  <p id="resultText" class="muted"></p>
+  <div class="info-grid">
+    <div class="info"><small>Punkty</small><strong id="score"></strong></div>
+    <div class="info"><small>Ukończone rozdania</small><strong>5 / 5</strong></div>
+  </div>
+  <h3>Co dalej?</h3>
+  <p>Najwięcej nauczysz się, zapisując nie tylko wybraną odpowiedź, ale też powód decyzji. W prawdziwym turnieju znaczenie mają stacki, tendencje przeciwników, ante i struktura wypłat.</p>
+  <button class="primary" id="againBtn">Rozwiąż ponownie</button>
+</section>
+
+<section class="card">
+  <h2>Jak korzystać z testu?</h2>
+  <ul class="muted">
+    <li>Najpierw przeczytaj całą sytuację i wybierz odpowiedź samodzielnie.</li>
+    <li>Sprawdź analizę dopiero po podjęciu decyzji.</li>
+    <li>Nie traktuj każdego rozdania jako pytania z jedną absolutną odpowiedzią — niektóre decyzje zależą od rywali i wypłat.</li>
+  </ul>
+  <p class="muted" style="font-size:13px">Materiał edukacyjny OPPL. Przykładowe rozdania nie zastępują analizy solverem ani indywidualnego treningu.</p>
+</section>
+<footer>O.P.P.L. · Test Mistrza Ligi · Wersja 1.0</footer>
+</div>
+<script>
+const questions = [
+{
+title:"A-8 na bubble", level:"Poziom 3", meta:"Turniej 6-max · 5 graczy pozostało · 4 miejsca płatne",
+scenario:"Wszyscy przed Tobą spasowali. Jesteś na cutoffie i masz A♥ 8♣. Za Tobą siedzą button i blindy. Nie znasz ich dokładnych stacków ani tendencji.",
+facts:[["Pozycja","Cutoff"],["Twój stack","12 BB"],["Blindy","0,5 / 1 BB"],["Ante","Brak w założeniu"]],
+cards:[["A","♥"],["8","♣"]],
+options:[
+["push","A. All-in za 12 BB","Maksymalna presja na rywali."],
+["raise","B. Standardowe podbicie","Otwierasz pulę mniejszym ryzykiem."],
+["fold","C. Pas","Unikasz ryzyka na bubble."]
+],
+best:["push","raise"],
+analysis:"All-in może być uzasadniony, zwłaszcza gdy rywale pasują zbyt często. Mniejsze otwarcie także może mieć sens, zależnie od strategii i rywali. Pas jest zwykle zbyt zachowawczy bez dodatkowych powodów, ale nie da się wskazać rozwiązania optymalnego bez stacków, wypłat, ante i zakresów przeciwników. Bubble zwiększa znaczenie ICM: utrata żetonów i ich zdobycie nie mają symetrycznej wartości pieniężnej.",
+lesson:"Wniosek: myśl o fold equity, ale nie ignoruj stacków rywali i presji ICM.",
+points:1
+},
+{
+title:"Top para pod presją", level:"Poziom 2", meta:"Turniej · gra po flopie · pula wieloosobowa",
+scenario:"Masz A♠ Q♠. Podbiłeś przed flopem i sprawdziło dwóch graczy. Flop to Q♦ 8♣ 4♥. Stawiasz około połowy puli, jeden rywal sprawdza, a drugi pasuje. Na turnie spada 2♣, a rywal po Twoim checku stawia 75% puli.",
+facts:[["Twoja ręka","Top para, top kicker"],["Board","Q♦ 8♣ 4♥ 2♣"],["Akcja","Rywal bet 75% puli"],["Stacki","Niepodane"]],
+cards:[["A","♠"],["Q","♠"]],
+options:[
+["call","A. Sprawdź","Utrzymujesz w puli blefy i słabsze ręce."],
+["raise","B. Podbij","Chcesz chronić rękę i wyciągnąć wartość."],
+["fold","C. Pas","Zakładasz, że rywal ma mocniejszą rękę."]
+],
+best:["call"],
+analysis:"Sprawdzenie jest rozsądnym punktem wyjścia: top para z top kickerem często jest zbyt mocna, by pasować na pojedynczy bet, ale podbicie może izolować Cię przeciwko lepszym rękom. Dokładna decyzja zależy od wielkości puli, stacków, tendencji rywala i jego zakresu po sprawdzeniu flopa. Pas może być właściwy przeciwko bardzo pasywnemu graczowi, który niemal nigdy nie blefuje.",
+lesson:"Wniosek: mocna ręka nie zawsze wymaga podbicia. Rozważ, jakie gorsze ręce sprawdzą raise, a jakie blefują.",
+points:1
+},
+{
+title:"Krótki stack na buttonie", level:"Poziom 2", meta:"Turniej 6-max · wszyscy spasowali do buttona",
+scenario:"Masz K♣ 9♣ na buttonie. Wszyscy przed Tobą spasowali. SB ma 18 BB, BB ma 7 BB, a Ty masz 10 BB. Blindy wynoszą 0,5/1 BB, bez ante. SB gra dość tight, a BB broni blindów szeroko.",
+facts:[["Twoja pozycja","Button"],["Twój stack","10 BB"],["SB / BB","18 BB / 7 BB"],["Tendencja BB","Szeroka obrona"]],
+cards:[["K","♣"],["9","♣"]],
+options:[
+["push","A. All-in","Presja na blindy i szansa wygrania puli od razu."],
+["minraise","B. Min-raise","Otwierasz małym rozmiarem i możesz spasować na shove."],
+["fold","C. Pas","Unikasz ryzykownej sytuacji."]
+],
+best:["push","minraise"],
+analysis:"K9 suited to ręka z potencjałem, a 10 BB sprzyja uproszczonej strategii push/fold. All-in może wywierać presję na SB, ale BB ma tylko 7 BB i może sprawdzać szerzej, bo ryzykuje mniej niż Ty. Min-raise może być opcją w strategii z odpowiednimi planami na reakcje rywali, ale bez szczegółowych zakresów nie da się rozstrzygnąć, która linia ma większe EV.",
+lesson:"Wniosek: stack przeciwnika wpływa na jego zachętę do sprawdzenia. Nie oceniaj wyłącznie własnych kart.",
+points:1
+},
+{
+title:"Czy blefować river?", level:"Poziom 3", meta:"Cash-game dla ćwiczenia decyzji postflop · heads-up",
+scenario:"Masz 9♠ 8♠. Board: K♠ 7♦ 3♠ 2♥ Q♣. Na riverze nie masz gotowego koloru ani pary. Rywal sprawdzał Twoją stawkę na flopie i turnie, a teraz checkuje do Ciebie. Nie znasz jego skłonności do hero-callów.",
+facts:[["Twoja ręka","Niedokończony draw"],["Board","K♠ 7♦ 3♠ 2♥ Q♣"],["Akcja","Rywal check na riverze"],["Cel","Zdecydować: bet czy check"]],
+cards:[["9","♠"],["8","♠"]],
+options:[
+["bluff","A. Duży blef","Reprezentujesz mocną rękę."],
+["check","B. Check behind","Rezygnujesz z blefu i pokazujesz showdown."],
+["small","C. Mały blef","Próbujesz tanio zmusić rywala do foldu."]
+],
+best:["check","bluff"],
+analysis:"To zależy od zakresów. Masz niedokończony draw, więc ręka może być kandydatem do blefu, ale Q♣ na riverze może poprawiać część zakresu agresora lub sprawdzającego — zależnie od wcześniejszej akcji. Potrzebujesz ocenić, jakie lepsze ręce rywal może spasować, jakie słabsze ręce ma i czy Twoja linia wiarygodnie reprezentuje wartość. Check jest bezpiecznym wyborem; blef może być dobry przy odpowiednich blockerach i przeciwniku zdolnym do foldu.",
+lesson:"Wniosek: przed blefem odpowiedz sobie: co dokładnie chcę zmusić do foldu i czy moja historia rozdania ma sens?",
+points:1
+},
+{
+title:"Mocny stack na stole finałowym", level:"Poziom 4", meta:"Turniej · 4 graczy · wypłaty rosną skokowo",
+scenario:"Masz 45 BB jako chip leader. Gracz z 16 BB otwiera z hijacka, a Ty jesteś na buttonie z A♦ J♦ i rozważasz 3-bet. Dwaj pozostali gracze mają odpowiednio 12 BB i 9 BB. Nie znasz dokładnej struktury wypłat ani zakresu otwarcia rywala.",
+facts:[["Twoja pozycja","Button"],["Twój stack","45 BB"],["Stacki rywali","16 / 12 / 9 BB"],["Etap","4 graczy przy stole"]],
+cards:[["A","♦"],["J","♦"]],
+options:[
+["3bet","A. 3-bet","Wykorzystujesz przewagę stacka i pozycję."],
+["call","B. Call","Zachowujesz słabsze ręce rywala i kontrolujesz pulę."],
+["fold","C. Pas","Unikasz ryzyka przeciwko otwarciu."]
+],
+best:["3bet","call"],
+analysis:"AJs to silna ręka na buttonie, więc 3-bet i call mogą być sensowne zależnie od otwierającego i jego reakcji na presję. Jako chip leader możesz wywierać presję na średnie stacki, ale nie oznacza to, że należy bezrefleksyjnie budować duże pule. ICM może zmieniać zakresy: średnie stacki często mają więcej do stracenia, a chip leader może naciskać, jednak szczegóły wypłat i stacków są niezbędne do precyzyjnej analizy.",
+lesson:"Wniosek: duży stack daje możliwości, ale nie usprawiedliwia każdej agresji. Dopasuj strategię do zakresu otwarcia i ICM.",
+points:1
+}
+];
+let index=0, score=0, answered={};
+const $=id=>document.getElementById(id);
+function cardHtml(rank,suit){const red=suit==="♥"||suit==="♦";return `<div class="playing-card ${red?'red':''}"><span>${rank}</span><span style="text-align:right">${suit}</span></div>`}
+function render(){
+ const q=questions[index]; $('qcount').textContent=`Rozdanie ${index+1} z ${questions.length}`;
+ $('qtitle').textContent=q.title; $('level').textContent=q.level; $('meta').textContent=q.meta;
+ $('scenario').textContent=q.scenario;
+ $('facts').innerHTML=q.facts.map(x=>`<div class="info"><small>${x[0]}</small><strong>${x[1]}</strong></div>`).join('');
+ $('hand').classList.remove('hidden'); $('holeCards').innerHTML=q.cards.map(c=>cardHtml(c[0],c[1])).join('');
+ $('options').innerHTML=q.options.map((o,i)=>`<label class="option"><input type="radio" name="answer" value="${o[0]}" ${answered[index]?.choice===o[0]?'checked':''}><span><b>${o[1]}</b><span>${o[2]}</span></span></label>`).join('');
+ $('progressFill').style.width=`${(index/questions.length)*100}%`;
+ $('feedback').classList.add('hidden'); $('navActions').classList.add('hidden');
+ $('checkBtn').classList.remove('hidden'); $('checkBtn').disabled=!document.querySelector('input[name="answer"]:checked');
+ if(answered[index]) showFeedback(answered[index].choice,true);
+ $('nextBtn').textContent=index===questions.length-1?'Zobacz wynik →':'Następne rozdanie →';
+}
+$('startBtn').onclick=()=>{$('intro').classList.add('hidden');$('quiz').classList.remove('hidden');render();window.scrollTo({top:0,behavior:'smooth'})};
+$('options').addEventListener('change',()=>{$('checkBtn').disabled=!document.querySelector('input[name="answer"]:checked')});
+function showFeedback(choice,old=false){
+ const q=questions[index], correct=q.best.includes(choice);
+ if(!old && !answered[index]){answered[index]={choice,correct};if(correct)score++}
+ const f=$('feedback');f.classList.remove('hidden','good','note');f.classList.add(correct?'good':'note');
+ f.innerHTML=`<h3>${correct?'Dobra decyzja — punkt!':'Warto rozważyć inne linie'}</h3><p>${q.analysis}</p><p><b>${q.lesson}</b></p><p class="muted" style="font-size:13px">Punktacja jest uproszczona: w praktyce niektóre rozdania dopuszczają kilka dobrych decyzji.</p>`;
+ $('checkBtn').classList.add('hidden');$('navActions').classList.remove('hidden');$('progressFill').style.width=`${((index+1)/questions.length)*100}%`;
+}
+$('checkBtn').onclick=()=>{const selected=document.querySelector('input[name="answer"]:checked');if(selected)showFeedback(selected.value)};
+$('nextBtn').onclick=()=>{if(index<questions.length-1){index++;render();window.scrollTo({top:0,behavior:'smooth'})}else finish()};
+function finish(){$('quiz').classList.add('hidden');$('results').classList.remove('hidden');$('score').textContent=`${score} / ${questions.length}`;$('resultTitle').textContent=score>=4?'Świetny wynik!':score>=2?'Dobry początek!':'Czas na trening!';$('resultText').textContent=`Zdobywasz ${score} z ${questions.length} punktów. Najważniejsze jest nie samo trafienie odpowiedzi, ale umiejętność wyjaśnienia decyzji i rozpoznania brakujących informacji.`;window.scrollTo({top:0,behavior:'smooth'})}
+function restart(){index=0;score=0;answered={};$('results').classList.add('hidden');$('intro').classList.remove('hidden');$('quiz').classList.add('hidden');window.scrollTo({top:0,behavior:'smooth'})}
+$('restartBtn').onclick=restart;$('againBtn').onclick=restart;
+</script>
+</body>
+</html>
